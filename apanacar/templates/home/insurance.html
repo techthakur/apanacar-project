@@ -1,0 +1,187 @@
+{% extends 'base.html' %} 
+
+<title> {% block title %} Car Insurance  {% endblock title %}   </title>
+
+
+{% block body %}
+{%  if user.is_authenticated %} 
+
+
+
+
+<style>
+.img{
+    margin-top: 80%;
+}
+</style>
+
+
+
+<a href="/insurance"> 
+<img src="static/img/logo/1carlogo.png" height="100px" width="150px"> </a>
+
+<div class="container">
+
+   <center>  <h1> Buying car insurance from </h1>
+       <h1> Apana car  is simple</h1> </center>
+
+       <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"> </h5>
+              <p class="card-text"> </p>
+
+              <img src="static/img/inc/1inc.png" height="338px" width="590px">
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">  Register for insurance  </h5>
+              <p class="card-text">
+                 
+
+                <form method="post" action="insurance">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="name" class="form-label">  your Name </label>
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter your name ">
+                      </div>
+
+                    <div class="mb-3">
+                      <label for="carnumber" class="form-label"> Enter your car number </label>
+                      <input type="text" class="form-control" id="carnumber" name="carnumber" aria-describedby="emailHelp" placeholder="car number MH47RT9087">
+                    </div>
+                    
+
+
+
+
+                    <div class="mb-3">
+                      <label for="phone" class="form-label"> Enter your mobile number </label>
+                      <input type="text" class="form-control" id="phone" name="phone" placeholder=" mobile number 7021775480">
+                    </div>
+
+                   
+                    <center>  <button type="submit"  class="btn btn-primary">Submit</button>  </center>
+                  </form>
+                
+                </p>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+
+<br>  <br> <br> 
+
+<hr> 
+
+<h2> Types of Car Insurance Policy in India  </h2> 
+
+
+
+
+
+
+
+<div class="card-group">
+  <div class="card">
+    <img src="static/img/inc/2.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> 1. Comprehensive Car Insurance </h5>
+      <p class="card-text"> A comprehensive car insurance plan provides complete cover against
+       third-party/person/property liability and for damages 
+       (collision, theft, accident, and more) caused to your own vehicle. 
+       You can also avail of a wide range of rider options such as zero depreciation, roadside assistance, 
+       personal accident cover, and more at the cost of an additional premium.
+        This type of plan is a 360-degree car protection plan; ideal for all car owners.  </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="static/img/inc/3.png"  height="190px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> 2. Third-Party Car Insurance  </h5>
+      <p class="card-text">  A third party car insurance only provides cover (death, disability, injury, and more) 
+      against damages incurred to a third person or property. 
+      It does not provide cover for you and your car. The premium of third party car
+       insurance is determined by the Insurance Regulatory and Development Authority of
+        India and is revised on an annual basis. A third party cover is mandatory for driving a motor
+         vehicle in India according to motor vehicle act of 1988.  </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="static/img/inc/4t.jpg" height="190px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> 3. Pay As You Drive Insurance </h5>
+      <p class="card-text"> As per this policy, you pay an insurance premium on the basis of the distance 
+      (kilometers) driven by the vehicle. 
+      This plan has been recently launched and is still in the early stages of development.
+       It is ideal for individuals who have more than 2-3 vehicles but utilise only one at a time. 
+       There are three slabs under this policy - 2,500 km, 5000 km, and 7500 km.  </p>
+    </div>
+  </div>
+</div>
+
+<br> <br> <br> 
+<img src="static/img/inc/6.png">
+
+
+<br> <br>   
+
+<div class="card mb-3" style="max-width: 1540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="static/img/inc/5.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"> Understand your car insurance and what it covers </h5>
+        <p class="card-text"> Basic personal auto insurance is mandated by most states and provides 
+          you with some financial protection in case of an accident.
+           But is it enough? What are the options? Learn how car insurance works and what types 
+           of coverage are available..</p>
+           <h5>Understanding auto insurance—the basics </h5>
+           <p> Auto insurance is a contract between you and the insurance company that protects
+              you against financial loss in the event of an accident or theft. 
+              In exchange for your paying a premium, the insurance company agrees
+               to pay your losses as outlined in your policy. </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<img src="static/img/inc/7.jpg">
+<img src="static/img/inc/8.jpg">
+
+
+</div>
+
+
+
+
+
+
+ {% else  %}
+ 
+
+ <div class="container"> 
+  <h4>  Sorry , you are not login, please first you signup or login, then you go to insurance page   </h4>
+  <h6> please try again </h6>  
+  <p> <b> error-404   </b>   </p> 
+</div>
+<br> <br> <br> <br> <br> 
+
+  {% endif %}
+
+  {% endblock body %}
